@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+:root{
+    --Blue: hsl(246, 80%, 60%);
+    --Light-red-1 : hsl(15, 100%, 70%); /*work*/
+    --Soft-blue : hsl(195, 74%, 62%); /*(play)*/
+    --Light-red : hsl(348, 100%, 68%); /*(study)*/
+    --Lime-green : hsl(145, 58%, 55%);/* (exercise)*/
+    --Violet : hsl(264, 64%, 52%); /*(social)*/
+    --Soft-orange : hsl(43, 84%, 65%); /*(self care)*/
+    --Very-dark-blue: hsl(226, 43%, 10%);
+    --Dark-blue: hsl(235, 46%, 20%);
+    --Desaturated-blue: hsl(235, 45%, 61%);
+    --Pale-Blue: hsl(236, 100%, 87%);
+}
+body{
+    font-family: 'Rubik', sans-serif;
+    background-color: var(--Very-dark-blue);
+}
+ul{
+    list-style: none;
+}
+.time-tracking-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 20px;
+    max-width: 80%;
+        margin:  0 1rem;
+
+}
+.person{
+    background-color:var(--Dark-blue) ;
+    border-radius: 10px;
+}
+.person .info{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    background-color: var(--Blue);
+    border-radius: 10px;
+    padding: 1rem 1rem 3rem 1rem;
+    
+}
+.person .info img{
+    width: 50px;
+    border: 2px solid white;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+.person .info p{
+    color: var(--Pale-Blue);
+    font-size: 0.8rem;
+}
+.person .info h1{
+    color: var(--Pale-Blue);
+    font-weight: 400;
+}
+.person .nav{
+    padding: 1rem;
+    color: var(--Pale-Blue);
+    font-size: 0.9rem;
+}
+.person .nav ul{    
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.person .nav ul li{
+    cursor: pointer;
+    transition: all 0.3s linear;
+}
+
+.person .nav ul li:hover{
+    color: white;
+}
+.person .nav ul li.active{
+    color: white;
+}
+.cards{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.card{
+    min-width: 200px;
+    border-radius: 10px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+.card:first-child{
+    background-color: var(--Light-red-1);
+}
+.card:nth-child(2){
+    background-color: var(--Soft-blue);
+}
+.card:nth-child(3){
+    background-color: var(--Light-red);
+}
+.card:nth-child(4){
+    background-color: var(--Lime-green);
+}
+.card:nth-child(5){
+    background-color: var(--Violet);
+}
+.card:nth-child(6){
+    background-color: var(--Soft-orange);
+}
+.card img{
+    width: 45px;
+    position: absolute;
+    top: -2px;
+    right: 10px;
+
+}
+.card .card-info{
+    background-color: var(--Dark-blue);
+    border-radius: 10px;
+    padding: 1rem;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.card-info h3{
+    font-weight: 400;
+    font-size: 0.8rem;
+}
+.title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+}
+.current{
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--Pale-Blue);
+}
+.prev{
+    font-size: 0.5rem;
+    font-weight: 300;
+    color: var(--Pale-Blue);
+}
+@media screen and (max-width:900px){
+    .container{
+        grid-template-columns: 1fr ;
+
+    }
+    .person .info{
+        flex-direction: row;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+    }
+    .person .nav ul{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+@media screen and (max-width:750px){
+    .cards{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+    .time-tracking-wrapper{
+        height: auto;
+        padding: 1rem ;
+    }
+}
+@media screen and (max-width:500px){
+    .cards{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    .time-tracking-wrapper{
+        height: auto;
+        padding: 1rem ;
+    }
+    .person .info{
+        justify-content: center;
+        align-items: center;
+    }
+    .person .info h1
+    {
+        font-size: 1rem;
+    }
+    .card-info div{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .card-info h3{
+        margin-bottom: 0;
+    }
+}
