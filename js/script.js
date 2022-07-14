@@ -35,7 +35,7 @@ const updateUi = (dataset) => {
         const card = document.createElement("div")
         card.classList.add("card")
         const markup = `
-                        <img src='/images/icon-${itemClass}.svg'/>
+                        <img src='../images/icon-${itemClass}.svg'/>
                         <div class="card-info">
                             <div class="title">
                                 <h3>${title}</h3>
