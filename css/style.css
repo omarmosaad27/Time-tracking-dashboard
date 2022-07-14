@@ -37,7 +37,7 @@ ul{
     grid-template-columns: 1fr 3fr;
     gap: 20px;
     max-width: 80%;
-        margin:  0 1rem;
+    margin:  0 1rem;
 
 }
 .person{
@@ -54,7 +54,7 @@ ul{
     
 }
 .person .info img{
-    width: 50px;
+    width: 55px;
     border: 2px solid white;
     border-radius: 50%;
     margin-bottom: 20px;
